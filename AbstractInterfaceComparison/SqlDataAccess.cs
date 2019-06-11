@@ -15,6 +15,7 @@ namespace AbstractInterfaceComparison
             Console.WriteLine("Load Connection String");
             return "testConnectionString";
         }
+
         public void LoadData(string sql)
         {
             Console.WriteLine("Loading Microsoft SQL Data");

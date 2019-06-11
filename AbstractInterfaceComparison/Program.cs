@@ -16,6 +16,8 @@ namespace AbstractInterfaceComparison
                 new SqliteDataAccess()
             };
 
+            // This loop runs through the 3 methods we created, 
+            // for both databases
             foreach (var db in databases)
             {
                 db.LoadConnectionString("demo");
