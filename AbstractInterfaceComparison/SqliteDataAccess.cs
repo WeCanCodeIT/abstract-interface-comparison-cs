@@ -4,24 +4,23 @@ using System.Text;
 
 namespace AbstractInterfaceComparison
 {
-    class SqliteDataAccess : IDataAccess
+    class SqliteDataAccess : DataAccess
     {
-        // SqliteDataAccess implements the IDataAccess interface
+        // SqliteDataAccess inherits from the DataAccess abstract class
+        // It is a blend of an Interface and a Base class
 
-        // When implementing a method from an interface, the
-        // override keyword is not needed
-        public string LoadConnectionString(string name)
-        {
-            Console.WriteLine("Load Connection String");
-            return "testConnectionString";
-        }
+        // The method LoadConnectionString() is not abstract or virtual,
+        // and therefore cannot be overridden in the derived class
+        // It is implemented directly from the DataAccess class
 
-        public void LoadData(string sql)
+        // When implementing an abstract method, 
+        // the override keyword must be used
+        public override void LoadData(string sql)
         {
             Console.WriteLine("Loading SQLite Data");
         }
 
-        public void SaveData(string sql)
+        public override void SaveData(string sql)
         {
             Console.WriteLine("Saving data to SQLite");
         }

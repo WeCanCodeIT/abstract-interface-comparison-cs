@@ -19,10 +19,12 @@ namespace AbstractInterfaceComparison
             return "testConnectionString";
         }
 
-        // Below are abstract methods.  They do not have a
-        // code body, and therefore they do not have any direct implementation.
+        // Below are abstract methods.  They do not have a code body, and
+        // therefore they do not have any direct implementation in this class.
         // To implement these methods you must override them
         // in a derived class
+
+        // LoadData() and SaveData() will look different for Sql vs. Sqlite
         public abstract void LoadData(string sql);
         public abstract void SaveData(string sql);
 

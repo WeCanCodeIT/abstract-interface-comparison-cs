@@ -7,19 +7,30 @@ namespace AbstractInterfaceComparison
     {
         static void Main(string[] args)
         {
-            // This is a list of IDataAccess typed objects, which we filled
+            // This is a list of DataAccess typed objects, which we filled
             // with instances of the SqlDataAccess and SqliteDataAccess classes.
-            // They are implement the IDataAccess interface
-            List<IDataAccess> databases = new List<IDataAccess>()
+            // They are derived from the DataAccess abstract class
+            List<DataAccess> databases = new List<DataAccess>()
             {
                 new SqlDataAccess(),
                 new SqliteDataAccess()
             };
 
+            // If we wanted, we could instantiate instances of the derived classes
+            DataAccess da_sqlite = new SqliteDataAccess();
+            DataAccess da_sql = new SqlDataAccess();
+
+            // ...but not the abstract base class
+            // DataAccess da = new DataAccess();
+
             foreach (var db in databases)
             {
+                // Defined in the DataAccess abstract base class
                 db.LoadConnectionString("demo");
-                db.LoadData("select * from table");
+
+                // Both methods below have their own implemention in the
+                // SqlDataAccess and SqliteDataAccess derived classes
+                db.LoadData("select * from table"); 
                 db.SaveData("insert into table");
                 Console.WriteLine();
             }
