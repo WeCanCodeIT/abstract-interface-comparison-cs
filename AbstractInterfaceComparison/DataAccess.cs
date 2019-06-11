@@ -21,6 +21,7 @@ namespace AbstractInterfaceComparison
 
         // Below are abstract methods.  They do not have a
         // code body, and therefore they do not have any direct implementation.
+
         // To implement these methods you must override them
         // in a derived class
         public abstract void LoadData(string sql);

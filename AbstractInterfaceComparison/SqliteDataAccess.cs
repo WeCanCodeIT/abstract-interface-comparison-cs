@@ -7,6 +7,7 @@ namespace AbstractInterfaceComparison
     class SqliteDataAccess : DataAccess
     {
         // SqliteDataAccess is a derived class of the DataAccess base class
+        // It inherits LoadConnectionString method from the DataAccess class
 
         // We can implement abstract methods in derived classes
         // with the override keyword
