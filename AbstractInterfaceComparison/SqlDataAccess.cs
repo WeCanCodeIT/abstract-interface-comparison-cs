@@ -4,18 +4,23 @@ using System.Text;
 
 namespace AbstractInterfaceComparison
 {
-    class SqlDataAccess : DataAccess
+    class SqlDataAccess : IDataAccess
     {
-        // SqlDataAccess is a derived class of the DataAccess base class
+        // SqlDataAccess implements the IDataAccess interface
 
-        // We can implement abstract methods in derived classes
-        // with the override keyword
-        public override void LoadData(string sql)
+        // When implementing a method from an interface, the
+        // override keyword is not needed
+        public string LoadConnectionString(string name)
+        {
+            Console.WriteLine("Load Connection String");
+            return "testConnectionString";
+        }
+        public void LoadData(string sql)
         {
             Console.WriteLine("Loading Microsoft SQL Data");
         }
 
-        public override void SaveData(string sql)
+        public void SaveData(string sql)
         {
             Console.WriteLine("Saving data to Microsoft SQL Server");
         }

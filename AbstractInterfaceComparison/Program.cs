@@ -7,16 +7,10 @@ namespace AbstractInterfaceComparison
     {
         static void Main(string[] args)
         {
-            // Why doesn't the following code run?
-            // DataAccess da = new DataAccess();
-
-            // Why does the following code run?  What does it do?
-            DataAccess da = new SqlDataAccess();
-
-            // This is a list of DataAccess typed objects, which we filled
+            // This is a list of IDataAccess typed objects, which we filled
             // with instances of the SqlDataAccess and SqliteDataAccess classes.
-            // They are derived classes of the DataAccess base class
-            List<DataAccess> databases = new List<DataAccess>()
+            // They are implement the IDataAccess interface
+            List<IDataAccess> databases = new List<IDataAccess>()
             {
                 new SqlDataAccess(),
                 new SqliteDataAccess()
