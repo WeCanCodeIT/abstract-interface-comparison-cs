@@ -7,11 +7,14 @@ namespace AbstractInterfaceComparison
     {
         static void Main(string[] args)
         {
-            // Why doesn't the following code run?
-            // DataAccess da = new DataAccess();
+            // We could instantiate any of the following objects
+            // da only has a LoadConnectionString() method
+            DataAccess da = new DataAccess();
 
-            // Why does the following code run?  What does it do?
-            DataAccess da = new SqlDataAccess();
+            // da_sqlite and dq_sql have access to the LoadConnectionString() 
+            // method, in addition to LoadData() and SaveData() methods
+            SqliteDataAccess da_sqlite = new SqliteDataAccess();
+            SqlDataAccess da_sql = new SqlDataAccess();
 
             // This is a list of DataAccess typed objects, which we filled
             // with instances of the SqlDataAccess and SqliteDataAccess classes.
@@ -26,7 +29,8 @@ namespace AbstractInterfaceComparison
             {
                 db.LoadConnectionString("demo");
                 db.LoadData("select * from table");
-                db.SaveData("insert into table");
+                // Why doesn't the following method run?
+                // db.SaveData("insert into table");
                 Console.WriteLine();
             }
 

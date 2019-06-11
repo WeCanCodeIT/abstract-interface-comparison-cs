@@ -9,14 +9,14 @@ namespace AbstractInterfaceComparison
         // SqliteDataAccess is a derived class of the DataAccess base class
         // It inherits LoadConnectionString method from the DataAccess class
 
-        // We can implement abstract methods in derived classes
-        // with the override keyword
+        // This virtual method can be overridden in the derived class
         public override void LoadData(string sql)
         {
             Console.WriteLine("Loading SQLite Data");
         }
 
-        public override void SaveData(string sql)
+        // This method is defined only in the derived class
+        public void SaveData(string sql)
         {
             Console.WriteLine("Saving data to SQLite");
         }
